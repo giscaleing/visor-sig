@@ -1,0 +1,58 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  width: 90%;
+  max-height: 85vh;
+  overflow: auto;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.table-attributes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-attributes th {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+  z-index: 1;
+}
+
+.table-attributes th,
+.table-attributes td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
