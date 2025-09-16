@@ -1,46 +1,84 @@
-# Getting Started with Create React App
+# 🌍 Visor SIG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un visor web de información geográfica desarrollado con **React, TypeScript, Leaflet, PostGIS y GeoServer**.  
+Permite visualizar, consultar y aplicar simbología dinámica a capas geográficas mediante servicios OGC (WMS/WFS).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Tecnologías principales
 
-### `npm start`
+- **Frontend:** React 18 + TypeScript + Vite/CRA
+- **Mapa:** Leaflet + React-Leaflet
+- **Backend GIS:** GeoServer (WMS, WFS)
+- **Base de datos:** PostgreSQL + PostGIS
+- **Estilos:** SLD dinámicos (generados en frontend y enviados a GeoServer)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## ⚙️ Funcionalidades principales
 
-### `npm test`
+- 📌 **Gestión de capas**: activar/desactivar capas desde el panel lateral.  
+- 🎨 **Simbología dinámica**: cambiar colores, opacidad y grosor de borde en tiempo real.  
+- 🔎 **Filtros por atributo**: construir filtros `CQL_FILTER` sobre columnas de las capas.  
+- 📊 **Tabla de atributos**: abrir registros con paginación desde WFS.  
+- 🔄 **Conteo optimizado**: cálculo de entidades visibles vs. totales mediante `resultType=hits`.  
+- 📍 **Compatibilidad espacial**: soporte para geometrías tipo polígono y punto (símbolos circulares).  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Estructura básica
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+ ├── components/        # Componentes React (mapa, sidebars, modales)
+ ├── hooks/             # Hooks personalizados (useCounts, etc.)
+ ├── sld/               # Constructores dinámicos de estilos SLD
+ ├── utils/             # Funciones auxiliares
+ ├── App.tsx            # Punto de entrada principal
+ └── index.tsx          # Renderizado inicial
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Instalación y uso
 
-### `npm run eject`
+1. Clona el repositorio:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/giscaleing/visor-sig.git
+cd visor-sig
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Instala dependencias:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Inicia el servidor de desarrollo:
 
-## Learn More
+```bash
+npm run dev
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Abre en tu navegador:  
+👉 [http://localhost:5173](http://localhost:5173)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## 🔮 Próximos pasos
+
+- [ ] Mejorar UX en filtros (multiselección y limpieza).  
+- [ ] Persistencia temporal de filtros aplicados.  
+- [ ] Operaciones espaciales (buffer, intersección, selección por área).  
+- [ ] Pruebas automáticas en React con datos WFS.  
+
+---
+
+## 📜 Licencia
+
+Este proyecto está bajo la licencia MIT – puedes usarlo y adaptarlo libremente.  
+
+---
+
+✍️ Desarrollado por **Giscale Ing. Topográfica**  
